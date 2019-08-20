@@ -45,7 +45,9 @@ the archive of the mailing list</a>.
       <li>Final: <a href="http://srfi.schemers.org/srfi-112/srfi-112-1.5.html">2013/09/12</a></li>
       <li>Draft: 2013/05/05-2013/07/05</li>
       <li>Final: 2013/09/12</li>
-    </ul>
+      <li>Revised to fix errata:
+	<ul>
+	  <li>2019/8/20 (<code>os-type</code> &rarr; <code>os-name</code>)</li></ul></li></ul>
 
     <h2>Abstract</h2>
     <p>This is a proposal for environment inquiry, providing human-readable information <em>at run time</em> about the hardware and software configuration on which a Scheme program is being executed.  They are mostly based on Common Lisp, with additions from the Posix <code>uname()</code> system call.</p>
@@ -96,7 +98,7 @@ the archive of the mailing list</a>.
     
     (define (machine-name) (vector-ref (uname) 1)) ; Posix nodename field
     
-    (define (os-type) (vector-ref (uname) 0)) ; Posix sysname field
+    (define (os-name) (vector-ref (uname) 0)) ; Posix sysname field
     
     (define (os-version)
       (string-append
